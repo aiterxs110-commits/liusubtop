@@ -1,0 +1,71 @@
+/* 插件层级强制居中 + 高度铺满 */
+#fixed-height-slider {
+    position: relative !important;
+    margin: 0 auto !important;
+    /* 关键：初始隐藏，避免初始化过程中样式闪烁 */
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+/* 初始化完成后显示 */
+#fixed-height-slider.owl-loaded {
+    opacity: 1 !important;
+}
+
+#fixed-height-slider .owl-stage,
+#fixed-height-slider .owl-stage-outer {
+    height: 100% !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    /* 关键：防止初始化时宽度溢出 */
+    overflow: hidden !important;
+}
+
+#fixed-height-slider .owl-item {
+    height: 100% !important;
+    width: auto !important;
+    margin: 0 auto !important;
+    /* 关键：固定项宽度，防止缩放 */
+    box-sizing: border-box !important;
+}
+
+/* 关键：提前定义item样式，防止初始化时尺寸突变 */
+#fixed-height-slider .item {
+    height: 100% !important;
+    width: calc(100% - 20px) !important; /* 考虑margin */
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* 手机端自适应 + 居中 */
+@media (max-width: 768px) {
+    #fixed-height-slider {
+        height: <?php echo $mobileHeight;?> !important;
+        min-height: <?php echo $mobileHeight;?> !important;
+        margin: 0 auto !important;
+    }
+    .slider-warp {
+        padding: 15px !important;
+        font-size: 14px !important;
+    }
+    .widget-slider-item img {
+        object-fit: cover !important;
+        margin: 0 auto !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+    }
+}
+
+/* 清除所有干扰样式，确保居中不被覆盖 */
+.widget-slider-outer-wrapper * {
+    box-sizing: border-box !important;
+    float: none !important;
+}
+
+/* 关键：图片预定义样式，防止加载时缩放 */
+.widget-slider-item img {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
