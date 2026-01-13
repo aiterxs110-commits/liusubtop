@@ -1,0 +1,811 @@
+/* 推特蓝V - 终极强制样式 | 优先级拉满 */
+body .twitter-verified-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 18px !important;  /* 容器宽度（适配图标放大） */
+    height: 18px !important; /* 容器高度 */
+    margin: 0 0 2px 4px !important;
+    padding: 0 !important;
+    border-radius: 0 !important; /* 取消圆形底色 */
+    /* 替换为蓝色放大版SVG图标（无背景） */
+background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyNCcgaGVpZ2h0PScyNCcgdmlld0JveD0nMCAwIDI0IDI0Jz4KPHBhdGggZmlsbD0nIzFEQTFGMicgZD0nbTguNiAyMi41bC0xLjktMy4ybC0zLjYtLjhsLjM1LTMuN0wxIDEybDIuNDUtMi44bC0uMzUtMy43bDMuNi0uOGwxLjktMy4yTDEyIDIuOTVsMy40LTEuNDVsMS45IDMuMmwzLjYuOGwtLjM1IDMuN0wyMyAxMmwtMi40NSAyLjhsLjM1IDMuN2wtMy42LjhsLTEuOSAzLjJsLTMuNC0xLjQ1eicvPgo8cGF0aCBmaWxsPSd3aGl0ZScgZD0nbTEwLjk1IDE1LjU1TDE2LjYgOS45bC0xLjQtMS40NWwtNC4yNSA0LjI1bC0yLjE1LTIuMUw3LjQgMTJ6Jy8+Cjwvc3ZnPg==") center center no-repeat !important;
+    background-color: transparent !important; /* 彻底去掉蓝色背景 */
+    background-size: 90% 90% !important; /* 图标放大（占容器90%） */
+    color: transparent !important; /* 隐藏原有文字V */
+    font-size: 0 !important; /* 清空字体大小 */
+    font-weight: 900 !important;
+    line-height: 1 !important;
+    vertical-align: middle !important;
+    border: none !important; /* 去掉白色边框 */
+    box-shadow: none !important; /* 去掉灰色外框/阴影 */
+    text-indent: 0 !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+}
+
+/* VIP蓝V（浅蓝） */
+body .twitter-verified-badge.vip {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%231677ff' d='m8.6 22.5l-1.9-3.2l-3.6-.8l.35-3.7L1 12l2.45-2.8l-.35-3.7l3.6-.8l1.9-3.2L12 2.95l3.4-1.45l1.9 3.2l3.6.8l-.35 3.7L23 12l-2.45 2.8l.35 3.7l-3.6.8l-1.9 3.2l-3.4-1.45zm2.35-6.95L16.6 9.9l-1.4-1.45l-4.25 4.25l-2.15-2.1L7.4 12z'/%3E%3C/svg%3E") center center no-repeat !important;
+    background-size: 90% 90% !important;
+    background-color: transparent !important;
+}
+
+/* SVIP蓝V（深紫） */
+body .twitter-verified-badge.svip {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23722ed1' d='m8.6 22.5l-1.9-3.2l-3.6-.8l.35-3.7L1 12l2.45-2.8l-.35-3.7l3.6-.8l1.9-3.2L12 2.95l3.4-1.45l1.9 3.2l3.6.8l-.35 3.7L23 12l-2.45 2.8l.35 3.7l-3.6.8l-1.9 3.2l-3.4-1.45zm2.35-6.95L16.6 9.9l-1.4-1.45l-4.25 4.25l-2.15-2.1L7.4 12z'/%3E%3C/svg%3E") center center no-repeat !important;
+    background-size: 90% 90% !important;
+    background-color: transparent !important;
+}
+
+/* 编辑蓝V（橙色） */
+body .twitter-verified-badge.editor {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23fa8c16' d='m8.6 22.5l-1.9-3.2l-3.6-.8l.35-3.7L1 12l2.45-2.8l-.35-3.7l3.6-.8l1.9-3.2L12 2.95l3.4-1.45l1.9 3.2l3.6.8l-.35 3.7L23 12l-2.45 2.8l.35 3.7l-3.6.8l-1.9 3.2l-3.4-1.45z'/%3E%3Cpath fill='white' d='M10.95 15.55L16.6 9.9l-1.4-1.45l-4.25 4.25l-2.15-2.1L7.4 12z'/%3E%3C/svg%3E") center center no-repeat !important;
+    background-size: 90% 90% !important;
+    background-color: transparent !important;
+}
+
+/* 勾号图标强制居中（兼容原有结构） */
+body .twitter-verified-badge .v-icon {
+    display: none !important; /* 隐藏原有勾号 */
+    width: 100% !important;
+    height: 100% !important;
+    line-height: 16px !important;
+    text-align: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* 头像右下角蓝V定位样式（保持之前调好的位置） */
+.avatar-verified-badge {
+    position: absolute !important;
+    bottom: 0 !important; 
+    right: 0 !important; 
+    transform: translate(10%, 10%) !important; 
+    z-index: 10 !important; 
+}
+
+/* 适配不同头像大小（图标同步放大） */
+/* 文章页面头像的蓝V */
+.author-avatar .avatar-verified-badge .twitter-verified-badge {
+    width: 16px !important;
+    height: 16px !important;
+    background-size: 90% 90% !important; /* 小容器也放大图标 */
+}
+/* 评论区头像的蓝V */
+.comment-avatar .avatar-verified-badge .twitter-verified-badge {
+    width: 18px !important;
+    height: 18px !important;
+    background-size: 90% 90% !important;
+}
+
+/* 蓝V叠加在头像内部右下角 */
+.avatar-xl.avatar {
+    position: relative !important; 
+}
+.avatar-xl .avatar-verified-badge {
+    position: absolute !important;
+    bottom: -1px !important; 
+    right: -1px !important;  
+    z-index: 10 !important;
+}
+
+/* 保持蓝V尺寸，图标放大 */
+.avatar-xl .avatar-verified-badge .twitter-verified-badge {
+    width: 22px !important;
+    height: 22px !important;
+    background-size: 90% 90% !important; /* 大容器放大图标 */
+    border: none !important; /* 去掉白边 */
+    box-shadow: none !important; /* 去掉阴影 */
+}
+/* 强制匹配.me-2容器内的蓝V */
+.me-2 {
+    position: relative !important;
+    display: inline-block !important;
+}
+/* 蓝V标签定位 */
+.me-2 .avatar-verified-badge {
+    position: absolute !important;
+    bottom: -1px !important;  
+    right: -1px !important;   
+    z-index: 999 !important;  
+    margin: 0 !important;     
+    padding: 0 !important;    
+}
+/* 蓝V图标样式（仅保留蓝色图标） */
+.me-2 .avatar-verified-badge .twitter-verified-badge {
+    width: 20px !important;
+    height: 20px !important;
+    background-size: 90% 90% !important; /* 图标放大 */
+    border: none !important; /* 去掉白边 */
+    background-color: transparent !important; /* 去掉蓝色背景 */
+    border-radius: 0 !important; /* 取消圆形 */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: none !important; /* 去掉灰色外框 */
+}
+/* 分享作者区域头像的蓝V */
+.share-author .avatar.me-1 {
+    position: relative !important;
+    display: inline-block !important;
+}
+/* 放大后头像的蓝V样式 */
+.share-author .avatar-verified-badge {
+    position: absolute !important;
+    bottom: -1px !important; 
+    right: -1px !important;  
+    z-index: 10 !important;
+}
+.share-author .avatar-verified-badge .twitter-verified-badge {
+    width: 20px !important; 
+    height: 20px !important;
+    background-size: 90% 90% !important; /* 图标放大 */
+    border: none !important; /* 去掉白边 */
+    background-color: transparent !important; /* 去掉蓝色背景 */
+}
+::-webkit-scrollbar {
+    display: none;
+}
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+/* 评论区整体样式 */
+.cao-comment-wrap {
+    max-width: 100%;
+    margin: 40px auto 60px;
+    padding: 0 15px;
+    font-family: PingFang SC, Microsoft YaHei, sans-serif;
+}
+
+/* 评论标题 */
+.cao-comment-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2D3748;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #E2E8F0;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.cao-comment-title::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 70px;
+    height: 3px;
+    background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+    border-radius: 3px;
+}
+
+.cao-comment-title i {
+    color: #6366F1;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* 评论表单容器 */
+.cao-comment-form-wrap {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.03);
+}
+
+/* 表单输入项 */
+.cao-comment-form-item {
+    margin-bottom: 20px;
+}
+
+.cao-comment-form-item input,
+.cao-comment-textarea textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    font-size: 14px;
+    color: #2D3748;
+    background: #FAFAFA;
+    transition: all 0.3s ease;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.cao-comment-form-item input:focus,
+.cao-comment-textarea textarea:focus {
+    border-color: #6366F1;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+    background: #FFFFFF;
+}
+
+.cao-comment-form-item input::placeholder,
+.cao-comment-textarea textarea::placeholder {
+    color: #A0AEC0;
+    font-size: 14px;
+}
+
+/* 评论编辑框高度优化 */
+.cao-comment-textarea textarea {
+    min-height: 80px !important;
+    max-height: 200px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+/* 登录提示 */
+.cao-comment-login {
+    padding: 15px 0;
+}
+
+.cao-comment-login .login-btn {
+    background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%) !important;
+    border: none !important;
+    color: #FFFFFF !important;
+    padding: 10px 30px !important;
+    border-radius: 50px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+}
+
+.cao-comment-login .login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.25) !important;
+}
+
+/* 登录状态提示 */
+.cao-comment-logged-in {
+    font-size: 14px;
+    color: #4A5568;
+}
+
+.cao-comment-logout {
+    color: #6366F1;
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 13px;
+}
+
+/* 提交按钮容器 */
+.cao-comment-submit-wrap {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+}
+
+/* 提交按钮 */
+.cao-comment-submit {
+    background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%) !important;
+    border: none !important;
+    color: #FFFFFF !important;
+    padding: 12px 35px !important;
+    border-radius: 12px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+}
+
+.cao-comment-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.25);
+    background: linear-gradient(135deg, #585BE0 0%, #7C52EE 100%) !important;
+}
+
+/* 评论列表 - 核心重构 */
+.cao-comment-list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-top: 10px !important;
+}
+
+/* 主评论项间距 */
+.cao-comment-list > li {
+    margin-bottom: 40px !important;
+    padding-bottom: 30px !important;
+    border-bottom: 1px solid #F7FAFC !important;
+    position: relative !important;
+}
+
+/* 最后一个评论项取消底部间距 */
+.cao-comment-list > li:last-child {
+    margin-bottom: 0 !important;
+    border-bottom: none !important;
+}
+
+/* 评论项主布局：头像左，内容右 */
+.cao-comment-list .comment-body {
+    display: flex !important;
+    gap: 18px !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+}
+
+/* 头像容器 - 强制圆形 */
+.cao-comment-list .comment-avatar {
+    flex-shrink: 0 !important;
+}
+
+.cao-comment-list .comment-avatar img {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important;
+    border: 3px solid #FFFFFF !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+    object-fit: cover !important;
+}
+
+/* 内容区容器 - 独占剩余宽度 */
+.cao-comment-list .comment-content-area {
+    flex: 1 !important;
+    display: block !important;
+}
+
+/* 昵称+标识+时间行 - 水平排列 */
+.cao-comment-list .comment-header-row {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin-bottom: 10px !important;
+    flex-wrap: wrap !important;
+}
+
+/* 昵称样式 */
+.cao-comment-list .comment-author {
+    font-weight: 600 !important;
+    color: #2D3748 !important;
+    font-size: 15px !important;
+    margin: 0 !important;
+}
+
+/* 会员标识 */
+.cao-comment-list .user-badge {
+    background: #E0E7FF !important;
+    color: #6366F1 !important;
+    font-size: 12px !important;
+    padding: 2px 8px !important;
+    border-radius: 4px !important;
+    font-weight: normal !important;
+    margin: 0 !important;
+}
+
+/* 评论时间 */
+.cao-comment-list .comment-metadata {
+    font-size: 12px !important;
+    color: #A0AEC0 !important;
+    margin: 0 !important;
+}
+
+.cao-comment-list .comment-metadata a {
+    color: #A0AEC0 !important;
+    text-decoration: none !important;
+}
+
+/* 评论内容 - 强制在昵称下方 */
+.cao-comment-list .comment-content {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    clear: both !important;
+    margin-bottom: 12px !important;
+}
+
+.cao-comment-list .comment-content p {
+    font-size: 14px !important;
+    color: #4A5568 !important;
+    line-height: 1.8 !important;
+    margin: 0 0 10px 0 !important;
+    padding: 15px 20px !important;
+    background: #F7FAFC !important;
+    border-radius: 16px !important;
+    word-wrap: break-word !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+/* 回复按钮 - 修复点击区域 */
+.cao-comment-list .reply {
+    font-size: 13px !important;
+    margin-top: 8px !important;
+    margin-bottom: 15px !important;
+}
+
+.cao-comment-list .reply a,
+.comment-reply-link {
+    color: #6366F1 !important;
+    text-decoration: none !important;
+    padding: 6px 12px !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+    background: #F0F2FF !important;
+    display: inline-block !important;
+    cursor: pointer !important; /* 强制鼠标指针 */
+    z-index: 999 !important; /* 提高层级，避免被遮挡 */
+    position: relative !important;
+}
+
+.cao-comment-list .reply a:hover,
+.comment-reply-link:hover {
+    background: #E0E7FF !important;
+    color: #4F46E5 !important;
+}
+
+/* 回复框样式 */
+#respond.comment-respond {
+    margin-top: 20px !important;
+    padding: 20px !important;
+    background: #F9FAFF !important;
+    border-radius: 16px !important;
+    border: 1px solid #E2E8F0 !important;
+}
+
+#respond .comment-reply-title {
+    font-size: 16px !important;
+    color: #2D3748 !important;
+    margin-bottom: 15px !important;
+    font-weight: 600 !important;
+}
+
+.cancel-comment-reply a {
+    color: #94A3B8 !important;
+    font-size: 13px !important;
+    margin-left: 10px !important;
+    text-decoration: none !important;
+}
+
+.cancel-comment-reply a:hover {
+    color: #6366F1 !important;
+}
+
+/* 嵌套回复列表 */
+.cao-comment-list .children {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-top: 20px !important;
+    margin-left: 60px !important;
+}
+
+/* 嵌套回复项间距 */
+.cao-comment-list .children li {
+    margin-bottom: 25px !important;
+    padding-bottom: 20px !important;
+    border-bottom: 1px solid #F0F4FF !important;
+}
+
+/* 嵌套回复最后一项取消间距 */
+.cao-comment-list .children li:last-child {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    border-bottom: none !important;
+}
+
+/* 嵌套回复头像缩小 */
+.cao-comment-list .children .comment-avatar img {
+    width: 40px !important;
+    height: 40px !important;
+}
+
+/* 评论分页 */
+.cao-comment-paginate {
+    margin-top: 40px !important;
+}
+
+.cao-comment-paginate .page-numbers {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    margin: 0 5px !important;
+    border-radius: 50% !important;
+    color: #4A5568 !important;
+    text-decoration: none !important;
+    font-size: 14px !important;
+    transition: all 0.3s ease !important;
+}
+
+.cao-comment-paginate .page-numbers.current {
+    background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%) !important;
+    color: #FFFFFF !important;
+    font-weight: 600 !important;
+}
+
+.cao-comment-paginate .page-numbers:hover:not(.current) {
+    color: #6366F1 !important;
+    background: #F0F2FF !important;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .cao-comment-form-wrap {
+        padding: 20px 18px !important;
+    }
+    
+    .cao-comment-list .comment-body {
+        gap: 12px !important;
+    }
+    
+    .cao-comment-list .comment-avatar img {
+        width: 45px !important;
+        height: 45px !important;
+    }
+    
+    .cao-comment-list .children {
+        margin-left: 40px !important;
+    }
+    
+    .cao-comment-list .children .comment-avatar img {
+        width: 35px !important;
+        height: 35px !important;
+    }
+    
+    .cao-comment-title {
+        font-size: 18px !important;
+    }
+    
+    .cao-comment-form-item input,
+    .cao-comment-textarea textarea {
+        padding: 12px 15px !important;
+    }
+    
+    .cao-comment-textarea textarea {
+        min-height: 70px !important;
+    }
+    
+    .cao-comment-submit {
+        padding: 10px 25px !important;
+    }
+    
+    .cao-comment-list .comment-content p {
+        padding: 12px 15px !important;
+        font-size: 13px !important;
+    }
+
+    .cao-comment-list > li {
+        margin-bottom: 30px !important;
+    }
+    
+    .cao-comment-list .children li {
+        margin-bottom: 20px !important;
+    }
+}
+
+/* 无限滚动按钮样式 */
+.infinite-scroll .infinite-scroll-button {
+    background: #F7FAFC !important;
+    color: #6366F1 !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 10px !important;
+    padding: 10px 20px !important;
+    margin-top: 20px !important;
+}
+
+.infinite-scroll .infinite-scroll-button:hover {
+    background: #F0F2FF !important;
+    border-color: #6366F1 !important;
+}
+
+/* 终极覆盖：解决样式冲突 */
+.cao-comment-list * {
+    float: none !important;
+    position: static !important;
+}
+
+.cao-comment-list .comment-content {
+    float: none !important;
+    display: block !important;
+}
+
+/* 确保回复按钮不被遮挡 */
+.comment-reply-link {
+    pointer-events: auto !important;
+}
+/* 评论框整体美化 - 舒展不局促 */
+.cao-comment-form-beautify {
+    background: #fff;
+    border: none !important;
+    border-radius: 24px !important;
+    padding: 25px 30px !important;
+    margin-bottom: 40px !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* 提示文字美化 */
+.cao-comment-form-tip {
+    font-size: 14px;
+    color: #94A3B8;
+    background: #F8FAFF;
+    padding: 8px 16px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-bottom: 18px;
+}
+
+/* 登录状态栏美化 */
+.cao-comment-logged-in-beautify {
+    font-size: 14px;
+    color: #4A5568;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.cao-comment-logged-in-beautify .cao-comment-logout {
+    color: #6366F1;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+.cao-comment-logged-in-beautify .cao-comment-logout:hover {
+    background: #F0F2FF;
+}
+
+/* 编辑框美化 - 更舒展、更矮 */
+.cao-comment-textarea-beautify textarea {
+    min-height: 70px !important; /* 降低高度 */
+    max-height: 150px;
+    padding: 16px 20px !important;
+    border: 1px solid #E8EFFC !important;
+    border-radius: 16px !important;
+    font-size: 15px !important;
+    color: #2D3748;
+    background: #F9FAFF !important;
+    resize: none !important; /* 取消拉伸，更整洁 */
+    line-height: 1.7;
+}
+.cao-comment-textarea-beautify textarea::placeholder {
+    color: #A0AEC0;
+    font-size: 15px;
+}
+.cao-comment-textarea-beautify textarea:focus {
+    border-color: #6366F1 !important;
+    background: #fff !important;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1) !important;
+}
+
+/* 提交按钮美化 */
+.cao-comment-submit-wrap-beautify {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px !important;
+}
+.cao-comment-submit-beautify {
+    background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%) !important;
+    border: none !important;
+    color: #fff !important;
+    padding: 12px 32px !important;
+    border-radius: 16px !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 6px 15px rgba(99, 102, 241, 0.2);
+}
+.cao-comment-submit-beautify:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.25);
+    background: linear-gradient(135deg, #585BE0 0%, #7C52EE 100%) !important;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .cao-comment-form-beautify {
+        padding: 20px 22px !important;
+    }
+    .cao-comment-textarea-beautify textarea {
+        min-height: 60px !important;
+        padding: 14px 18px !important;
+    }
+    .cao-comment-submit-beautify {
+        padding: 10px 28px !important;
+    }
+}
+/* 全屏评论框容器 - 自适应宽度 */
+.cao-comment-form-fullscreen {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* 全屏编辑框样式 */
+.cao-comment-textarea-fullscreen {
+    width: 100% !important;
+    margin-bottom: 15px !important;
+}
+.cao-comment-textarea-fullscreen textarea {
+    width: 100% !important;
+    min-height: 80px !important;
+    max-height: 200px !important;
+    padding: 16px 20px !important;
+    border: 1px solid #E8EFFC !important;
+    border-radius: 12px !important;
+    font-size: 15px !important;
+    color: #2D3748 !important;
+    background: #F9FAFF !important;
+    resize: vertical !important;
+    line-height: 1.7 !important;
+    box-sizing: border-box !important;
+    max-width: none !important;
+    box-shadow: none !important;
+}
+.cao-comment-textarea-fullscreen textarea::placeholder {
+    color: #A0AEC0 !important;
+    font-size: 15px !important;
+}
+.cao-comment-textarea-fullscreen textarea:focus {
+    border-color: #6366F1 !important;
+    background: #FFFFFF !important;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1) !important;
+    outline: none !important;
+}
+
+/* 提交按钮容器 - 右对齐 */
+.cao-comment-submit-wrap-fullscreen {
+    display: flex !important;
+    justify-content: flex-end !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* 提交按钮样式 */
+.cao-comment-submit-fullscreen {
+    background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%) !important;
+    border: none !important;
+    color: #FFFFFF !important;
+    padding: 12px 30px !important;
+    border-radius: 8px !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+}
+.cao-comment-submit-fullscreen:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(99, 102, 241, 0.2);
+    background: linear-gradient(135deg, #585BE0 0%, #7C52EE 100%) !important;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .cao-comment-textarea-fullscreen textarea {
+        min-height: 70px !important;
+        padding: 14px 18px !important;
+    }
+    .cao-comment-submit-fullscreen {
+        padding: 10px 24px !important;
+        font-size: 14px !important;
+    }
+}
+/* 创作者收益计划页面样式 */
+.card-header h4, .card-header h5 {
+    font-weight: 600;
+}
+.list-group-item-action:hover {
+    background-color: #f8f9fa;
+}
+.reward-mechanism ul li {
+    font-size: 0.95rem;
+}
+.share-guide .btn {
+    transition: all 0.3s ease;
+}
+.share-guide .btn:hover {
+    transform: translateY(-2px);
+}
