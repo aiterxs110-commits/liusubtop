@@ -1,0 +1,93 @@
+/* 右滑提示容器 - 电脑端居中，手机端卡在第一排两卡片中间 */
+.swipe-tip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 40px;
+    z-index: 999;
+    animation: fadeIn 0.8s ease;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+/* 手指图标动画：前后摆动 */
+.swipe-tip .hand-icon {
+    width: 30px;
+    height: 30px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-1v4a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-1H6a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2h3zm1 2H6v8h4V5zm8 8V5h-4v8h4z'/%3E%3C/svg%3E") no-repeat center;
+    background-size: 100%;
+    animation: handSwing 1.5s ease-in-out infinite alternate;
+    transform-origin: right center;
+}
+/* 提示文字 */
+.swipe-tip .tip-text {
+    font-size: 16px;
+    white-space: nowrap;
+    font-weight: 500;
+}
+/* 手指摆动动画 */
+@keyframes handSwing {
+    0% { transform: translateX(0) rotate(0deg); }
+    100% { transform: translateX(-8px) rotate(20deg); }
+}
+/* 渐入动画 */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+    100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+/* 隐藏提示 */
+.swipe-tip.hidden {
+    display: none !important;
+}
+
+/* 原有样式 */
+.swiper-pagination,
+.swiper-button-prev,
+.swiper-button-next {
+    display: none !important;
+}
+.section-cat-navbtn .btn.active {
+    background-color: #000;
+    color: #fff;
+    border-radius: 8px;
+}
+/* Swiper容器：相对定位 */
+.posts-swiper {
+    position: relative;
+    min-height: 400px !important;
+    height: auto !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+}
+
+/* 核心：手机端提示动画卡在第一排两个卡片中间 */
+@media (max-width: 767.98px) {
+    .swipe-tip {
+        top: 10%; /* 垂直对齐第一排卡片中间 */
+        left: 50%; /* 水平卡在两个卡片中间 */
+        transform: translate(-50%, -50%);
+        padding: 8px 18px;
+        border-radius: 30px;
+    }
+    .swipe-tip .hand-icon {
+        width: 24px;
+        height: 24px;
+    }
+    .swipe-tip .tip-text {
+        font-size: 13px;
+    }
+    /* 手机端Swiper容器最小高度适配 */
+    .posts-swiper {
+        min-height: 300px !important;
+    }
+    /* 强制让提示框层级高于卡片，避免被遮挡 */
+    .swipe-tip {
+        z-index: 9999 !important;
+    }
+
+}
