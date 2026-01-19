@@ -1,0 +1,155 @@
+/* --- 1. 头部样式 (高度拉高，大气) --- */
+.shelf-hero-immersive {
+    position: relative;
+    /* 核心修改：增加高度，不再扁平 */
+    padding: 80px 0 100px; 
+    margin-bottom: -40px; /* 让下面的书架稍微叠上来一点 */
+    background: #2d3436;
+    color: #fff;
+    margin-top: -20px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.hero-bg-layer {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-size: cover; background-position: center;
+    filter: blur(8px) brightness(0.6); 
+    transform: scale(1.1);
+    z-index: 0;
+}
+.hero-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%);
+    z-index: 1;
+}
+
+.hero-content { position: relative; z-index: 2; }
+
+/* 标题 */
+.hero-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    text-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    letter-spacing: 2px;
+}
+.hero-desc {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.8);
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+/* --- Tab 导航 (毛玻璃悬浮条) --- */
+.hero-tabs-wrap {
+    display: flex; justify-content: center;
+}
+
+.hero-tabs {
+    position: relative;
+    display: inline-flex;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 6px;
+    border-radius: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.tab-btn {
+    position: relative;
+    z-index: 2;
+    padding: 10px 28px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.8);
+    cursor: pointer;
+    border-radius: 40px;
+    transition: color 0.3s ease;
+    display: flex; align-items: center; gap: 8px;
+    font-weight: 500;
+}
+
+.tab-btn:hover { color: #fff; }
+.tab-btn.active { color: #333; font-weight: 700; }
+
+.tab-icon { font-size: 16px; }
+
+/* 滑块动画效果 */
+.tab-indicator {
+    position: absolute;
+    top: 6px; bottom: 6px; left: 6px;
+    width: 0; /* JS 计算宽度 */
+    background: #fff;
+    border-radius: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    z-index: 1;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* --- 2. 书架内容区 --- */
+.bookshelf-swiper {
+    padding-top: 20px;
+    padding-bottom: 60px;
+    overflow: hidden;
+}
+
+.bookshelf-grid {
+    display: grid;
+    /* 智能列宽 */
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 40px 25px; /* 增加行距，给3D悬浮留空间 */
+}
+
+/* 3D 书本卡片 */
+.book-card {
+    display: flex; flex-direction: column; text-decoration: none;
+    position: relative; transition: transform 0.3s;
+}
+.book-card:hover { transform: translateY(-12px); }
+
+.book-cover-wrap {
+    position: relative; width: 100%; padding-bottom: 145%;
+    border-radius: 4px 12px 12px 4px;
+    box-shadow: 
+        0 5px 15px rgba(0,0,0,0.15),
+        inset 4px 0 10px rgba(0,0,0,0.1);
+    background: #f3f4f6; overflow: hidden;
+    transition: box-shadow 0.3s;
+}
+.book-card:hover .book-cover-wrap {
+    box-shadow: 
+        0 20px 40px rgba(0,0,0,0.3),
+        inset 4px 0 10px rgba(0,0,0,0.1);
+}
+/* 书脊线 */
+.book-cover-wrap::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 6px;
+    background: rgba(0,0,0,0.15); z-index: 10; mix-blend-mode: multiply;
+}
+.book-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+
+/* 书名信息 */
+.book-title {
+    font-size: 15px; font-weight: 700; color: #333; margin-top: 15px;
+    line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+    text-align: center; transition: color 0.2s;
+}
+.book-card:hover .book-title { color: #007aff; }
+
+/* 手机适配 */
+@media (max-width: 768px) {
+    .shelf-hero-immersive { padding: 50px 0 70px; } /* 手机上稍微矮一点，但也比之前高 */
+    .hero-title { font-size: 2rem; }
+    
+    .hero-tabs-wrap { overflow-x: auto; padding-bottom: 5px; } /* 防止Tab换行 */
+    .tab-btn { padding: 8px 16px; font-size: 13px; white-space: nowrap; }
+    
+    .bookshelf-grid {
+        grid-template-columns: repeat(3, 1fr); /* 手机3列 */
+        gap: 25px 10px;
+    }
+    .book-title { font-size: 12px; -webkit-line-clamp: 1; margin-top: 8px; }
+}
