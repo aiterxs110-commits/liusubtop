@@ -1,0 +1,147 @@
+/* 核心美化容器 */
+.order-record-container {
+    width: 100%;
+    margin: 0 auto;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* 头部设计 */
+.order-header-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    margin-bottom: 10px;
+}
+
+.order-header-box h5 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #1a1d23;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.order-header-box h5 i {
+    color: #1d9bf0;
+}
+
+.order-header-box .order-count-badge {
+    font-size: 12px;
+    background: #f1f5f9;
+    color: #64748b;
+    padding: 4px 12px;
+    border-radius: 50px;
+}
+
+/* 订单列表区域 */
+.order-list-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.order-item-card {
+    background: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 16px;
+    padding: 20px;
+    text-decoration: none !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+    position: relative;
+}
+
+.order-item-card:hover {
+    border-color: #1d9bf0;
+    box-shadow: 0 10px 25px -5px rgba(29, 155, 240, 0.08);
+    transform: translateY(-2px);
+}
+
+/* 订单第一行：标题与时间 */
+.order-row-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.order-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+    flex: 1;
+    padding-right: 20px;
+}
+
+.order-time {
+    font-size: 12px;
+    color: #94a3b8;
+    white-space: nowrap;
+}
+
+/* 订单第二行：详情数据 */
+.order-details-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.detail-info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.detail-info-item span {
+    font-size: 11px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.detail-info-item b {
+    font-size: 13px;
+    color: #475569;
+    font-weight: 600;
+}
+
+/* 状态标签美化 */
+.order-status-pill {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .order-status-pill {
+        position: static;
+        display: inline-block;
+        margin-top: 10px;
+    }
+}
+
+.status-success { background: #f0fdf4; color: #16a34a; }
+.status-danger { background: #fef2f2; color: #dc2626; }
+
+/* 空状态 */
+.order-empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #cbd5e1;
+}
+
+.order-empty-state i {
+    font-size: 40px;
+    margin-bottom: 15px;
+    display: block;
+}

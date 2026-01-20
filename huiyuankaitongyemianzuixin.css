@@ -1,0 +1,132 @@
+/* 1. 极致暗黑穿透：增加 :not 排除弹窗组件，防止干扰支付界面 */
+/* 这里的 :not(.layui-layer) 和 :not([class*="layer"]) 是关键 */
+html, body, 
+header.site-header, 
+footer.site-footer, 
+.x-ultra-dark-page,
+.navbar, 
+.footer-widgets {
+    background-color: #000000 !important;
+    background-image: none !important;
+    border-color: #2f3336 !important;
+}
+
+/* 仅在非弹窗区域强制文字颜色 */
+body:not(.layui-layer-page):not(.modal-open) .x-ultra-dark-page,
+body:not(.layui-layer-page) header.site-header,
+body:not(.layui-layer-page) footer.site-footer {
+    color: #e7e9ea !important;
+}
+
+/* 强制修改导航链接颜色 */
+header.site-header a, 
+footer.site-footer a,
+.navbar-nav .nav-link {
+    color: #eff3f4 !important;
+}
+
+header.site-header a:hover, 
+footer.site-footer a:hover {
+    color: #1d9bf0 !important;
+}
+
+/* --- 修复弹窗文字看不清的问题 --- */
+/* 明确指定 Layer 弹窗及 RiPro 支付弹窗内的文字为深色 */
+.layui-layer, 
+.layui-layer-content, 
+.layui-layer-title, 
+.go-pay-pay-box, 
+.pay-vip-modal {
+    color: #333 !important; /* 恢复深色文字 */
+}
+
+.layui-layer-content span,
+.layui-layer-content b,
+.layui-layer-content p {
+    color: #333 !important;
+}
+
+/* 2. 紧凑型订阅区域 */
+.x-ultra-dark-page {
+    padding-bottom: 40px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* 顶部验证区 */
+.x-dark-header {
+    padding: 30px 20px 10px;
+    text-align: center;
+}
+.x-verified-svg {
+    width: 28px; height: 28px;
+    fill: #1d9bf0;
+    margin-bottom: 8px;
+}
+.x-dark-header h1 { font-size: 22px; font-weight: 800; color: #fff !important; margin: 0; }
+.x-dark-header p { font-size: 13px; color: #71767b !important; margin-top: 5px; }
+
+/* 水平吸附滑动轨道 */
+.x-dark-scroll { width: 100%; overflow: hidden; }
+.x-dark-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 15px 35px;
+    gap: 12px;
+    scrollbar-width: none;
+}
+.x-dark-track::-webkit-scrollbar { display: none; }
+
+/* 紧凑卡片 */
+.x-dark-card {
+    flex: 0 0 calc(100vw - 70px);
+    max-width: 280px;
+    background: #000 !important;
+    border: 1px solid #333639 !important;
+    border-radius: 14px;
+    padding: 18px;
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.x-dark-card.active-focus {
+    border-color: #1d9bf0 !important;
+    background: rgba(29, 155, 240, 0.02) !important;
+}
+
+.tier-label { font-size: 10px; font-weight: 700; color: #71767b !important; text-transform: uppercase; margin-bottom: 2px; }
+.tier-name { font-size: 18px; font-weight: 800; color: #fff !important; margin-bottom: 10px; }
+
+.price-box { margin-bottom: 12px; }
+.price-now { font-size: 30px; font-weight: 800; color: #fff !important; }
+.price-unit { font-size: 12px; color: #71767b !important; }
+
+/* 极窄功能列表 */
+.feat-list { list-style: none; padding: 0; margin: 0 0 15px; flex: 1; }
+.feat-list li { font-size: 12.5px; color: #e7e9ea !important; margin-bottom: 6px; display: flex; align-items: flex-start; gap: 8px; line-height: 1.2; }
+.feat-list li i { color: #1d9bf0 !important; font-size: 13px; margin-top: 2px; }
+
+/* X 风格黑白对比按钮 */
+.x-btn-sub {
+    width: 100%;
+    background: #eff3f4 !important;
+    color: #0f1419 !important;
+    border-radius: 50px;
+    padding: 9px;
+    font-weight: 700;
+    font-size: 14px;
+    border: none !important;
+}
+.x-btn-sub:hover { background: #d7dbdc !important; }
+.x-btn-sub.owned { background: transparent !important; border: 1px solid #536471 !important; color: #fff !important; cursor: default; }
+
+/* 底部极简说明 */
+.x-dark-footer-info { max-width: 500px; margin: 20px auto; padding: 0 20px; }
+.faq-item-mini { font-size: 11px; color: #71767b !important; margin-bottom: 8px; display: flex; gap: 8px; line-height: 1.3; }
+
+/* 修复底部 Widgets 间距 */
+footer.site-footer {
+    padding-top: 30px;
+    border-top: 1px solid #2f3336 !important;
+}
